@@ -22,7 +22,6 @@
 ## 🚀 התקנה והרצה
 1. **פתח את קובץ ה-HTML בדפדפן** או הרץ את הפרויקט עם `Live Server`.  
 2. **שחזר את הריפו באמצעות:**  
-   ```sh
    git clone https://github.com/yourusername/MoneyTriviaGame.git
 
 אם יש שימוש בניהול חבילות, התקן את התלויות:
@@ -32,6 +31,7 @@ sh
 npm install
 
 👩‍💻 יוצרות
+
 Michal Lewenstein – מפתחת ראשית
 
 Yael Fuchs – מפתחת ראשית
