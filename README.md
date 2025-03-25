@@ -24,12 +24,13 @@
 2. **שחזר את הריפו באמצעות:**  
    ```sh
    git clone https://github.com/yourusername/MoneyTriviaGame.git
+
 אם יש שימוש בניהול חבילות, התקן את התלויות:
 
 sh
-Copy
-Edit
+
 npm install
+
 👩‍💻 יוצרות
 Michal Lewenstein – מפתחת ראשית
 
