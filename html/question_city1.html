@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>שלב א</title>
+  <link rel="stylesheet" href="../css/question_city.css">
+  <script src="../js/question_city1.js"></script>
+</head>
+
+<body dir="rtl">
+  <div class="grid-container">
+    <div class="grid-item score-section">
+      <h3>:score</h3>
+      <div id="score1"></div>
+      <h3>:high score</h3>
+      <div id="high_score"></div>
+    </div>
+    <div class="grid-item main-content">
+      <div id="timer"></div>
+      <div class="image_city1">
+        <img src="../image/pariz.png">
+      </div>
+      <div id="anime">
+        <div class="progress">
+          <div class="color"></div>
+        </div>
+      </div>
+      <div id="question"></div>
+      <div id="answers">
+        <button class="answer" id="answer-1" onclick="checkAnswer(0)">א.</button>
+        <button class="answer" id="answer-2" onclick="checkAnswer(1)">ב.</button>
+        <button class="answer" id="answer-3" onclick="checkAnswer(2)">ג.</button>
+        <button class="answer" id="answer-4" onclick="checkAnswer(3)">ד.</button>
+      </div>
+    </div>
+    <div class="grid-item level-section">
+      <div id="board_level" class="board_level">
+        <div class="level" id="level-1">1000000₪</div>
+        <div class="level" id="level-2">500000₪</div>
+        <div class="level" id="level-3">250000₪</div>
+        <div class="level" id="level-4">100000₪</div>
+        <div class="level" id="level-5">50000₪</div>
+        <div class="level" id="level-6">25000₪</div>
+        <div class="level" id="level-7">15000₪</div>
+        <div class="level" id="level-8">12500₪</div>
+        <div class="level" id="level-9">10000₪</div>
+        <div class="level" id="level-10">7500₪</div>
+        <div class="level" id="level-11">5000₪</div>
+        <div class="level" id="level-12">3000₪</div>
+        <div class="level" id="level-13">2000₪</div>
+        <div class="level" id="level-14">1000₪</div>
+        <div class="level" id="level-15">500₪</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" id="popup">
+    <h2>נגמר לך הזמן!</h2>
+    <p>האם אתה מעוניין להתחיל משחק מחדש או לצאת?</p>
+    <button type="button" onclick="window.open('משחק_הכסף.html', '_self')">להפסיק</button>
+    <button type="button" onclick="window.open('page_1.html', '_self')" ondblclick="endGame()">להתחיל מחדש</button>
+  </div>
+  <div class="popup_loss" id="popup_loss">
+    <h2>הפסדת...לא נורא, אולי בפעם הבאה!</h2>
+    <p>האם אתה מעוניין להתחיל משחק מחדש או לצאת?</p>
+    <button type="button" onclick="window.open('משחק_הכסף.html', '_self')">להפסיק</button>
+    <button type="button" onclick="window.open('page_1.html', '_self')">להתחיל מחדש</button>
+  </div>
+  <div class="popup_retirement" id="popup_retirement">
+    <h2>הגעת לנקודת פרישה<span id="retirement-name"></span></h2>
+    <p>הניקוד הנוכחי שלך הוא:<span id="retirement-score"></span></p>
+    <button id="continue-button">המשך לשחק</button>
+    <button id="retire-button">פרש מהמשחק</button>
+  </div>
+  <div class="popup_for_milion" id="popup_for_milion">
+    <h2>מזל טובבב הגעת למליון</h2>
+    <button id="continue-button" onclick="window.open('page_1.html', '_self')">למשחק חדש</button>
+    <button id="retire-button" onclick="window.open('משחק_הכסף.html', '_self')">לפרישה מהמשחק</button>
+  </div>
+  <script>
+    start();
+  </script>
+</body>
+
+</html>

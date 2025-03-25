@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דף שלבים</title>
+  <link rel="stylesheet" href="../css/page_1.css">
+  <script src="../js/page_1.js"></script>
+</head>
+
+<body dir="rtl" style="background-image: url(../image/תמונה\ לעמוד\ פתיחה.jpg); background-size: cover;">
+  <div id="container">
+    <button id="Log_in" onclick="openPopup()">התחבר</button>
+  </div>
+  <div id="citys">
+    <div class="city">
+      <button>
+        <a href="../html/question_city1.html">
+          <img src="../image/pariz.png">
+          <span class="level-label">רמה 1</span>
+        </a>
+      </button>
+    </div>
+    <div id="photo_2">
+      <div class="city">
+        <button>
+          <a href="../html/questoin_city2.html">
+            <img src="../image/Netherlands.png">
+            <span class="level-label">רמה 2</span>
+          </a>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" id="userPopup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">×</span>
+      <h2>הכנס שם</h2>
+      <input type="text" id="username" placeholder="Enter your username" required>
+      <button id="save" onclick="saveUserInfo()">שמור</button>
+    </div>
+  </div>
+
+  <script src="../js/page_1.js"></script>
+</body>
+
+</html>

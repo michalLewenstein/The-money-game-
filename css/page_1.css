@@ -1,0 +1,301 @@
+body {
+  text-align: center;
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.city {
+  position: relative;
+  /* For positioning level-label */
+  display: inline-block;
+  /* Ensures alignment */
+}
+
+#citys {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* Centers cities horizontally */
+  align-items: center;
+  /* Aligns vertically */
+  gap: 20px;
+  /* Small space between images */
+  flex-wrap: nowrap;
+  /* Keeps images side by side */
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#citys img {
+  height: 34vh;
+  width: 25vw;
+  display: block;
+  /* Removes extra spacing */
+}
+
+.level-label {
+  position: absolute;
+  top: 50%;
+  /* Centers vertically */
+  left: 50%;
+  /* Centers horizontally */
+  transform: translate(-50%, -50%);
+  /* Exact centering */
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black */
+  color: white;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-family: sans-serif;
+  border-radius: 10px;
+  z-index: 1;
+  /* Above image */
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  /* Above everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: #e59eef;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #e59eef;
+  width: 30vw;
+  height: 20vh;
+  text-align: center;
+  border-radius: 20%;
+}
+
+#save {
+  background-color: #b068ba;
+}
+
+#username {
+  background-color: #b068ba;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#container {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#Log_in {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, yellow, orange, red, violet, purple, blue, yellow);
+  background-size: 400%;
+  border-radius: 30px;
+  z-index: 1;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#Log_in:hover {
+  animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
+}
+
+#Log_in:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(45deg, #f15523, #ef3224, #7c3697);
+  background-size: 400%;
+  border-radius: 40px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+#Log_in:hover:before {
+  filter: blur(20px);
+  opacity: 1;
+  animation: animate 8s linear infinite;
+}
+
+/* Responsive adjustments */
+
+/* Large screens (above 1200px) */
+@media (min-width: 1201px) {
+  #citys {
+    order: 1;
+    /* Cities first */
+    flex-wrap: nowrap;
+    /* Side by side */
+  }
+
+  #container {
+    order: 2;
+    /* Log_in below */
+    margin-top: 10px;
+  }
+}
+
+/* Medium screens (768px - 1200px) */
+@media (max-width: 1200px) {
+  #citys img {
+    width: 30vw;
+    height: 30vh;
+  }
+
+  .level-label {
+    font-size: 20px;
+    /* Slightly smaller */
+    padding: 8px 16px;
+  }
+
+  .popup-content {
+    width: 40vw;
+  }
+
+  #Log_in {
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+  }
+}
+
+/* Tablets (481px - 767px) */
+@media (max-width: 767px) {
+  body {
+    justify-content: flex-start;
+    /* Aligns to top */
+  }
+
+  #citys {
+    flex-direction: column;
+    /* Stacks vertically */
+    margin-top: 0;
+    order: 2;
+    /* Cities below */
+  }
+
+  #container {
+    order: 1;
+    /* Log_in first */
+    margin-top: 5vh;
+    margin-bottom: 20px;
+  }
+
+  #citys img {
+    width: 50vw;
+    height: 25vh;
+  }
+
+  .level-label {
+    font-size: 18px;
+    padding: 6px 12px;
+  }
+
+  .popup-content {
+    width: 60vw;
+    height: 25vh;
+  }
+
+  #save,
+  #username {
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  #Log_in {
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* Mobile screens (up to 480px) */
+@media (max-width: 480px) {
+  #citys img {
+    width: 70vw;
+    height: 20vh;
+  }
+
+  .level-label {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+
+  .popup-content {
+    width: 80vw;
+    height: 30vh;
+    padding: 15px;
+  }
+
+  #save,
+  #username {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .close {
+    font-size: 24px;
+  }
+
+  #Log_in {
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+  }
+
+  #container {
+    width: 100%;
+  }
+}

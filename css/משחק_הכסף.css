@@ -1,0 +1,184 @@
+body {
+  background-image: url(../image/תמונה\ לעמוד\ פתיחה.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  /* Ensures content fits screen */
+}
+
+.start_image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  /* Limits width on large screens */
+}
+
+img {
+  border-radius: 20%;
+  height: 50vh;
+  width: 25vw;
+  margin-top: 3vh;
+  display: block;
+  /* Removes extra spacing */
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.stylebuttonstart,
+.stylebuttoninstruction {
+  position: relative;
+  width: 20vw;
+  height: 10vh;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 4vh;
+  background: linear-gradient(90deg, yellow, orange, red, violet, purple, blue, yellow);
+  background-size: 400%;
+  border-radius: 30px;
+  margin-bottom: 4vh;
+  /* Space between buttons */
+  z-index: 1;
+  border: none;
+  /* Removes default border */
+  cursor: pointer;
+  /* Indicates interactivity */
+}
+
+.stylebuttonstart:hover,
+.stylebuttoninstruction:hover {
+  animation: animate 8s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
+}
+
+.stylebuttonstart:before,
+.stylebuttoninstruction:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(45deg, #f15523, #ef3224, #7c3697);
+  background-size: 400%;
+  border-radius: 40px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  /* Corrected syntax */
+}
+
+.stylebuttonstart:hover:before,
+.stylebuttoninstruction:hover:before {
+  filter: blur(20px);
+  opacity: 1;
+  animation: animate 8s linear infinite;
+}
+
+/* Responsive adjustments */
+
+/* Medium screens (768px - 1200px) */
+@media (max-width: 1200px) {
+  img {
+    width: 30vw;
+    /* Slightly wider */
+    height: 45vh;
+    /* Slightly shorter */
+  }
+
+  .stylebuttonstart,
+  .stylebuttoninstruction {
+    width: 25vw;
+    /* Wider buttons */
+    height: 9vh;
+    font-size: 3.5vh;
+    line-height: 50px;
+    /* Adjusted to fit */
+  }
+
+  .buttons-container {
+    margin-top: 8vh;
+    /* Slightly reduced */
+  }
+}
+
+/* Tablets (481px - 767px) */
+@media (max-width: 767px) {
+  img {
+    width: 50vw;
+    /* Wider for visibility */
+    height: 40vh;
+    /* Shorter */
+    margin-top: 5vh;
+    /* Adjusted from top */
+  }
+
+  .stylebuttonstart,
+  .stylebuttoninstruction {
+    width: 40vw;
+    /* Wider buttons */
+    height: 8vh;
+    font-size: 3vh;
+    line-height: 45px;
+  }
+
+  .buttons-container {
+    margin-top: 6vh;
+    /* Reduced spacing */
+  }
+}
+
+/* Mobile screens (up to 480px) */
+@media (max-width: 480px) {
+  img {
+    width: 70vw;
+    /* Maximized width */
+    height: 30vh;
+    /* Shorter */
+    margin-top: 4vh;
+  }
+
+  .stylebuttonstart,
+  .stylebuttoninstruction {
+    width: 60vw;
+    /* Maximized buttons */
+    height: 7vh;
+    font-size: 2.5vh;
+    line-height: 40px;
+    margin-bottom: 3vh;
+    /* Slightly less spacing */
+  }
+
+  .buttons-container {
+    margin-top: 4vh;
+    /* Minimal spacing */
+  }
+
+  body {
+    justify-content: flex-start;
+    /* Aligns to top */
+    padding-top: 2vh;
+    /* Small top padding */
+  }
+}

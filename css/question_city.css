@@ -1,0 +1,421 @@
+body {
+  background-color: rgb(211, 186, 235);
+  text-align: center;
+  margin: 0;
+  padding: 1%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Image container */
+.image_city1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+/* Image styling */
+.image_city1 img {
+  width: 70%;
+  height: auto;
+}
+
+/* Answer options */
+.answer {
+  text-align: right;
+  padding-right: 4%;
+  border-radius: 10%;
+  background-color: rgb(156, 95, 156);
+  width: 45vw;
+  height: 8vh;
+  font-size: 3vh;
+  padding-top: 0.5vh;
+  margin: 0.5vh auto;
+  display: block;
+  border: none;
+  cursor: pointer;
+}
+
+/* Question styling */
+#question {
+  font-size: 2vh;
+  margin: 1vh 0;
+}
+
+/* Hover effect for answers */
+.answer:hover {
+  background-color: #ccc;
+}
+
+/* Prize levels */
+.level {
+  border-radius: 10px;
+  background-color: rgb(156, 95, 156);
+  width: 16vw;
+  font-size: 2vw;
+  position: relative;
+  transition: all 0.3s ease;
+  height: 5.7vh;
+  padding-top: 0.1px;
+  margin: 1% 37% 1% 0;
+  /* Restored original right margin */
+  text-align: center;
+  color: white;
+}
+
+/* Level container */
+.board_level {
+  margin-bottom: 2%;
+  margin-top: 1%;
+  margin-right: 2%;
+  display: block;
+  /* Restored original layout */
+}
+
+/* Score and high score */
+#score1,
+#high_score {
+  position: static;
+  /* Changed from absolute to stack naturally */
+  background-color: rgb(211, 186, 235);
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2vw;
+  margin: 0 auto 1vh auto;
+  /* Centered with spacing */
+  border-radius: 7px;
+  height: 30px;
+  width: 5vw;
+  /* Adjusted to vw for consistency */
+  padding-top: 1vh;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+h3 {
+  font-family: Rubik;
+  font-size: 3vw;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 2);
+  margin-top: 5vh;
+  margin-bottom: 10px;
+  /* Added spacing below title */
+}
+
+/* Popup base styling */
+.popup,
+.popup_loss,
+.popup_retirement,
+.popup_for_milion {
+  width: 50vw;
+  height: 65vh;
+  background: rgb(156, 95, 156, 0.9);
+  border-radius: 20%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  visibility: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: #000 solid;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.open-popup,
+.open-popup_loss,
+.open-popup_retirement,
+.open-popup_for_milion {
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup h2,
+.popup_loss h2,
+.popup_retirement h2,
+.popup_for_milion h2 {
+  font-size: 6vh;
+  color: #000;
+  margin: 30px 0 10px;
+}
+
+.popup p,
+.popup_loss p,
+.popup_retirement p {
+  font-size: 5.5vh;
+  color: #000;
+}
+
+.popup button,
+.popup_loss button,
+.popup_retirement button,
+.popup_for_milion button {
+  width: 35vw;
+  height: 7vh;
+  margin-top: 4vh;
+  background: #000;
+  color: rgb(156, 95, 156);
+  border-radius: 20%;
+  outline: none;
+  font-size: 3vh;
+  cursor: pointer;
+  border: none;
+}
+
+/* Grid layout */
+.grid-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.grid-item {
+  text-align: center;
+}
+
+/* Specific widths for grid items */
+.score-section {
+  width: 20%;
+}
+
+.main-content {
+  width: 50%;
+}
+
+.level-section {
+  width: 30%;
+}
+
+/* Progress bar */
+.progress {
+  position: relative;
+  height: 10px;
+  width: 70%;
+  border: 6px solid rgb(156, 95, 156);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+.progress .color {
+  position: absolute;
+  background-color: #f4f410;
+  width: 0px;
+  height: 10px;
+  border-radius: 10px;
+  animation: progres 10s infinite linear;
+}
+
+#anime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress.active .color {
+  animation: progres 10s linear;
+}
+
+.progress-stopped {
+  animation-play-state: paused;
+}
+
+@keyframes progres {
+  0% {
+    width: 0%;
+  }
+
+  25% {
+    width: 25%;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  75% {
+    width: 75%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+/* Responsive adjustments */
+
+/* Large screens (above 1200px) */
+@media (min-width: 1201px) {
+  .score-section {
+    width: 20%;
+  }
+
+  .main-content {
+    width: 50%;
+  }
+
+  .level-section {
+    width: 30%;
+  }
+}
+
+/* Medium screens (768px - 1200px) */
+@media (max-width: 1200px) {
+  .grid-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .score-section {
+    width: 100%;
+    order: 2;
+  }
+
+  .main-content {
+    width: 100%;
+    order: 1;
+  }
+
+  .level-section {
+    width: 100%;
+    order: 3;
+  }
+
+  .answer {
+    width: 60vw;
+  }
+
+  .level {
+    width: 25vw;
+    margin-right: 0;
+    /* Centers levels */
+    margin-left: auto;
+  }
+
+  #score1,
+  #high_score {
+    width: 8vw;
+  }
+}
+
+/* Tablets (481px - 767px) */
+@media (max-width: 767px) {
+  .grid-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .answer {
+    width: 80vw;
+    height: 7vh;
+    font-size: 2.5vh;
+  }
+
+  .level {
+    width: 35vw;
+    font-size: 2.5vw;
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  #score1,
+  #high_score {
+    width: 10vw;
+    font-size: 2.5vw;
+  }
+
+  .popup,
+  .popup_loss,
+  .popup_retirement,
+  .popup_for_milion {
+    width: 80vw;
+    height: 55vh;
+  }
+
+  .popup button,
+  .popup_loss button,
+  .popup_retirement button,
+  .popup_for_milion button {
+    width: 60vw;
+    height: 6vh;
+    font-size: 2.5vh;
+  }
+
+  .image_city1 img {
+    width: 85%;
+  }
+
+  .progress {
+    width: 85%;
+  }
+
+  h3 {
+    font-size: 4vw;
+  }
+}
+
+/* Mobile screens (up to 480px) */
+@media (max-width: 480px) {
+  #question {
+    font-size: 1.8vh;
+  }
+
+  .answer {
+    width: 90vw;
+    height: 6vh;
+    font-size: 2vh;
+  }
+
+  .level {
+    width: 50vw;
+    font-size: 3vw;
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  #score1,
+  #high_score {
+    width: 12vw;
+    font-size: 3vw;
+  }
+
+  .popup h2,
+  .popup_loss h2,
+  .popup_retirement h2,
+  .popup_for_milion h2 {
+    font-size: 4vh;
+  }
+
+  .popup p,
+  .popup_loss p,
+  .popup_retirement p {
+    font-size: 3.5vh;
+  }
+
+  .popup button,
+  .popup_loss button,
+  .popup_retirement button,
+  .popup_for_milion button {
+    width: 70vw;
+    font-size: 2vh;
+  }
+
+  .image_city1 img {
+    width: 90%;
+  }
+
+  .progress {
+    width: 90%;
+  }
+
+  h3 {
+    font-size: 5vw;
+  }
+}
